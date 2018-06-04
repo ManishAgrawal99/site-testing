@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Service Name</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Oxygen" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+<body>
+  <!-- jQuery (Bootstrap JS plugins depend on it) -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+
+
+  <!--Header consists of the entire navigation strip-->
+  <header>
+    <nav id="header-nav" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          
+          <!--It contains the clickable logo for the brand-->
+          <a href="index.html" class="pull-left visible-md visible-lg">
+            <div id="logo-img" alt="Logo Image"></div>
+          </a>
+
+          <!--It contains the clicable brand name where a tag holds the name and p tag holds kosher and star logo-->
+          <div class="navbar-brand">
+            <a href="index.html">
+              <h1>iCleaners</h1>
+            </a>
+
+            <p>
+              <img src="images/star-k-logo.png" alt="kosher certification">
+              <span>Spotless Spaces</span>
+            </p>
+          </div>
+
+            <!-- Creates a navigation button when the screen size is reduced-->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!--The list that contains the icons and the one that appears on clicking the top right button-->
+        <div id="collapsable-nav" class="collapse navbar-collapse">
+          <ul id="nav-list" class="nav navbar-nav navbar-right">
+            
+            <li>
+              <a href="service_list.html">
+                <span> <i class="material-icons">restaurant_menu</i></span>
+                <br class="hidden-xs">
+                Services
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <span> <i class="material-icons">contact_support</i></span>
+                <br class="hidden-xs">
+                About
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <span> <i class="material-icons">shopping_cart</i></span>
+                <br class="hidden-xs">
+                Cart
+              </a>
+            </li>
+
+            <li id="phone" class="hidden-xs">
+              <a href="tel:123-456-7890">
+                <span>123-456-7890</span>
+              </a>
+              <div>Contact Us</div>
+            </li>
+                                   
+          </ul>
+        </div>
+      </div>      
+    </nav>
+  </header>
+
+  <div id="call-btn" class="visible-xs">
+    <a class="btn" href="tel:123-456-7890">
+      <span> <i class="material-icons">call</i></span>
+      123-456-7890
+    </a>
+  </div>
+  <div id="xs-deliver" class="text-center visible-xs">Contact Us</div>
+
+  <!-- The main page or the Jumbotron-->
+
+<div id="main-content" class="container">
+    <h1 class="text-center">Service name</h1>
+
+    <div id="service-page" class="row">
+      
+      <div class="col-sm-5 visible-sm visible-md visible-lg">
+        <div id="service-image">
+          <span>Service-Name</span>
+        </div>
+      </div>
+
+      <div class="col-sm-7 col-xs-12">
+        <div id="service-description">
+          <hr>
+          <h4>Price: Rs. 1200 - Rs. 4700</h4>
+          <hr>
+          
+
+          <div class="home-details">
+            <div class="home-type service-selection-drops">House Type</div>
+
+            <div class="dropdown-service-page  dropdown-house-type">
+              <button onclick="HomeTypeDropdown()" class="dropbtn">Choose an option</button>
+              <div id="HomeTypeDropdown" class="dropdown-content">
+                <p>1 BHK</p>
+                <p>2 BHK</p>
+                <p>3 BHK</p>
+                <p>4 BHK (1400-1800 sq. ft)</p>
+                <P>1800 sq.ft -2300 sq.ft </P>
+              </div>
+            </div>
+          </div>
+
+          <div class="home-details">
+            <div class="service-type service-selection-drops">Service Type</div>
+
+            <div class="dropdown-service-page  dropdown-service-type">
+              <button onclick="ServiceTypeDropdown()" class="dropbtn">Choose an option</button>
+              <div id="ServiceTypeDropdown" class="dropdown-content">
+                <p>single service</p>
+                <p>3 times a year</p>
+                <p>6 times a year</p>
+                <p>12 times a year</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--End of service description-->
+      </div>
+      <!--The end of row-->
+
+        <div id="detailed-description">
+          <h4>
+            Professional crews of trained Professionals that are committed to deep clean your home for 7-8 hours. Complete coverage of your home’s kitchen, bathroom’s, bedroom’s &other living Areas.
+          </h4>
+          <h5>
+            <ul>
+              <li>Furniture Dusting & Cleaning with special chemicals</li>
+              <li>Mattress Vacuuming</li>
+              <li>Floor cleaned by Steam machine</li>
+              <li>Lighting Fixtures</li>
+              <li>Washing/ Wet Wiping of walls and ceiling</li>
+              <li>Cabinets/Cupboards from outside as well as inside</li>
+              <li>Cabinets/Cupboards Should be emptied by the Customer</li>
+            </ul>
+          </h5> 
+        </div>
+
+    </div>    
+</div>
+
+<!--The end of the jumbotron section-->
+
+<footer class="panel-footer">
+  <div class="container">
+    <div class="row">
+      <!--The contents in footer divided into 3 parts-->
+      <section id="Hours" class="col-sm-4">
+        <span>Working Hours: </span><br>
+        Sun-Thurs: 11:15am - 10pm<br>
+        Fri: 11:15am - 2:30pm<br>
+        Saturday Closed
+        <hr class="visible-xs"><!--Creates a horizontal line-->
+      </section>
+
+      <section id="address" class="col-sm-4">
+        <span>Office Address:</span><br>
+        Office number and name<br>
+        Street and city<br>
+        <p>Office hours 10:00am - 5:00pm<br>monday - friday</p>
+        <hr class="visible-xs"><!--Creates a horizontal line-->
+      </section>
+
+      <section id="testimonials" class="col-sm-4">
+        <p>"Testimonial number 1 of that service. It was a great experience"</p>
+        <p>Testimonial number 2 of that service ! Cannot ask for more</p>
+      </section>      
+    </div>
+
+    <div class="text-center">
+      &copy; Copyright iCleaners 2018
+    </div>
+
+  </div>
+</footer>
+
+
+</body>
+</html>
