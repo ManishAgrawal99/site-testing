@@ -1,0 +1,224 @@
+body {
+  font-size: 16px;
+  color: #000;
+  background-color: #fff;
+  font-family: 'Oxygen', sans-serif;
+}
+
+/** HEADER **/
+#header-nav {
+  background-color: #000;
+  border-radius: 0;
+  border: 0;
+  color: #fff;
+}
+
+#logo-img {
+  background: url('../images/restaurant-logo_medium.png') no-repeat;
+  width: 100px;
+  height: 100px;
+  margin: 10px 15px 10px 0;
+}
+
+.navbar-brand {
+  padding-top: 25px;
+}
+.navbar-brand h1 { /* Restaurant name */
+  font-family: 'Lora', serif;
+  color: #fff;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+#nav-list {
+  margin-top: 10px;
+}
+
+#nav-list a {
+  margin-top: 10px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.2em;
+}
+#nav-list a:hover {
+  background: #E7E7E7;
+}
+#nav-list a span {
+  font-size: 1.8em;
+}
+
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #fff;
+}
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -30px;
+}
+/* END HEADER */
+
+
+/* HOME PAGE */
+.container .jumbotron {
+  box-shadow: 0 0 50px #000;
+  border: 2px solid #000;
+}
+
+#home-tiles{
+   margin-top: 50px;
+}
+
+#dc-tile, #sc-tile, #bc-tile, #cs-tile, #kc-tile, #as-tile{
+  height: 250px;
+  width: 150px;
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden;
+}
+#dc-tile:hover, #sc-tile:hover, #bc-tile:hover, #cs-tile:hover, #kc-tile:hover, #as-tile:hover{
+  box-shadow: 0 1px 5px 1px #000;
+}
+#dc-tile {
+  background: url('../images/fff.jpg') no-repeat;
+  background-position: center;
+}
+#sc-tile {
+  background: url('../images/fff.jpg') no-repeat;
+  background-position: center;
+}
+#bc-tile {
+  background: url('../images/fff.jpg') no-repeat;
+  background-position: center;
+}
+#cs-tile {
+  background: url('../images/fff.jpg') no-repeat;
+  background-position: center;
+}
+#kc-tile {
+  background: url('../images/fff.jpg') no-repeat;
+  background-position: center;
+}
+#as-tile {
+  background: url('../images/fff.jpg') no-repeat;
+  background-position: center;
+}
+#dc-tile span, #sc-tile span, #bc-tile span, #cs-tile span, #kc-tile span, #as-tile span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  color: #000;
+  font-family: 'Lora', serif;
+
+}
+/* END HOME PAGE */
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+  .container .jumbotron {
+    background: url('../images/jumbotron_1200.jpg') no-repeat;
+    height: 675px;
+  }
+
+  #home-cart {
+  margin-left: 50px;
+  }
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Header */
+  #logo-img {
+    background: url('../images/restaurant-logo_medium.png') no-repeat;
+    width: 100px;
+    height: 100px;
+    margin: 5px 5px 5px 0;
+  }
+
+  #home-cart {
+  margin-left: 50px;
+  }
+  /* End Header */
+
+  /* Home Page */
+  .container .jumbotron {
+    background: url('../images/jumbotron_992.jpg') no-repeat;
+    height: 558px;
+  }
+  /* End Home Page */
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Home Page */
+  .container .jumbotron {
+    background: url('../images/jumbotron_768.jpg') no-repeat;
+    height: 432px;
+  }
+  /* End Home Page */
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+  /* Header */
+  .navbar-brand {
+    padding-top: 10px;
+    height: 80px;
+  }
+  .navbar-brand h1 { /* Restaurant name */
+    padding-top: 10px;
+    font-size: 5vw; /* 1vw = 1% of viewport width */
+  }
+
+  #collapsable-nav a { /* Collapsed nav menu text */
+    font-size: 1.2em;
+  }
+  #collapsable-nav a span { /* Collapsed nav menu glyph */
+    font-size: 1em;
+    margin-right: 5px;
+  }
+
+  /* End Header */
+
+  /* Home Page */
+  .container .jumbotron {
+    margin-top: 30px;
+    padding: 0;
+  }
+}
+
+
+/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
+@media (max-width: 479px) {
+  /* Header */
+  .navbar-brand h1 { /* Restaurant name */
+    padding-top: 5px;
+    font-size: 6vw;
+  }
+  /* End Header */
+  
+  /* Home page */
+
+
+  .col-xxs-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    width: 100%;
+  }
+}
+
+
+
