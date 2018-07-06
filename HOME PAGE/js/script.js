@@ -19,3 +19,20 @@ window.onclick = function(event) {
     }
   }
 }
+
+document.getElementById("homedrp").addEventListener("click", getHomeSelectedValue);
+document.getElementById("aboutdrp").addEventListener("click", getAboutSelectedValue); 
+document.getElementById("contactdrp").addEventListener("click", getContactSelectedValue); 
+
+function getHomeSelectedValue() {
+    var selectedValue = "home";
+    console.log(selectedValue);
+}
+function getAboutSelectedValue() {
+    var selectedValue = "About";
+    console.log(selectedValue);
+}
+function getContactSelectedValue() {
+    var selectedValue = "contact";
+    console.log(selectedValue);
+}
