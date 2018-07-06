@@ -220,5 +220,108 @@ body {
   }
 }
 
+/**SERVICES PAGE**/
+@media (min-width: 768px) {
+  .service-des-left{
+  border-right: 1px solid #e6e6e6;
+  }
+}
+
+
+.box h1{
+  float: left;
+  margin-right: 25px;
+  margin-bottom: 55px;
+  border: 2px solid gray;
+  padding: 10px;
+  border-radius: 50%;
+  color: #2AB769;
+
+}
+
+.box {
+  margin-top: 60px;
+  margin-right: 10px;
+}
+
+.box p{
+  
+}
+
+#service-img{
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#service-img img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+.service-des-right p{
+  text-align: center;
+  margin-left: 30px;
+  margin-top: 30px;
+  color: gray;
+  letter-spacing: 1px;
+}
+
+/*Home type dropdown*/
+
+
+.dropbtn {
+    margin-top: 20px;
+    background-color: #fff;
+    color: #2AB769;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #000;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dropdown-content {
+    display: none;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+  background-color: #000;
+  color: #2AB769;
+}
+
+.show {
+  display: block;
+}
+
+
 
 
