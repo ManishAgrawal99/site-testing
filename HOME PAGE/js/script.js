@@ -27,12 +27,15 @@ document.getElementById("contactdrp").addEventListener("click", getContactSelect
 function getHomeSelectedValue() {
     var selectedValue = "home";
     console.log(selectedValue);
+    document.getElementById("house-type-selected").textContent=selectedValue;
 }
 function getAboutSelectedValue() {
     var selectedValue = "About";
     console.log(selectedValue);
+    document.getElementById("house-type-selected").textContent=selectedValue;
 }
 function getContactSelectedValue() {
     var selectedValue = "contact";
     console.log(selectedValue);
+    document.getElementById("house-type-selected").textContent=selectedValue;
 }

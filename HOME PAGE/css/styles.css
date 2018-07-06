@@ -86,11 +86,11 @@ body {
   box-shadow: 0 1px 5px 1px #000;
 }
 #dc-tile {
-  background: url('../images/fff.jpg') no-repeat;
+  background: url('../images/dc.jpg') no-repeat;
   background-position: center;
 }
 #sc-tile {
-  background: url('../images/fff.jpg') no-repeat;
+  background: url('../images/sc.jpg') no-repeat;
   background-position: center;
 }
 #bc-tile {
@@ -98,15 +98,15 @@ body {
   background-position: center;
 }
 #cs-tile {
-  background: url('../images/fff.jpg') no-repeat;
+  background: url('../images/cs.jpg') no-repeat;
   background-position: center;
 }
 #kc-tile {
-  background: url('../images/fff.jpg') no-repeat;
+  background: url('../images/kc.jpg') no-repeat;
   background-position: center;
 }
 #as-tile {
-  background: url('../images/fff.jpg') no-repeat;
+  background: url('../images/as.jpg') no-repeat;
   background-position: center;
 }
 #dc-tile span, #sc-tile span, #bc-tile span, #cs-tile span, #kc-tile span, #as-tile span {
