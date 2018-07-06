@@ -286,6 +286,11 @@ body {
 
 .dropdown {
     position: relative;
+    margin-bottom: 30px;
+}
+
+.clearance{
+  min-height: 100px;
 }
 
 .dropdown button{
