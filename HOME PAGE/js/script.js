@@ -1,3 +1,14 @@
+//Signup-Modal
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
 /**Service page dropdown**/
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
@@ -22,7 +33,7 @@ window.onclick = function(event) {
 
 document.getElementById("homedrp").addEventListener("click", getHomeSelectedValue);
 document.getElementById("aboutdrp").addEventListener("click", getAboutSelectedValue); 
-document.getElementById("contactdrp").addEventListener("click", getContactSelectedValue); 
+document.getElementById("contactdrp").addEventListener("click", getContactSelectedValue);
 
 function getHomeSelectedValue() {
     var selectedValue = "home";
@@ -39,3 +50,5 @@ function getContactSelectedValue() {
     console.log(selectedValue);
     document.getElementById("house-type-selected").textContent=selectedValue;
 }
+
+
