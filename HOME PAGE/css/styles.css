@@ -390,7 +390,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 /* Set a style for all buttons */
-button {
+.signupbtn {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -401,7 +401,7 @@ button {
     opacity: 0.9;
 }
 
-button:hover {
+.signupbtn:hover {
     opacity:1;
 }
 
