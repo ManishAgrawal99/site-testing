@@ -9,27 +9,47 @@ window.onclick = function(event) {
     }
 }
 
-//When pressing signup button
-document.getElementById("signupSubmit").addEventListener("click", function () {
-        console.log('signup button pressed');
-        // Call server to get the name
-        var pass = document.getElementById("pass1").value;
-        console.log(pass);
+/***Signup System***/
 
-          $ajaxUtils
-          .sendGetRequest("data/name.json", 
-            function (res) {
-              console.log('Inside Response');
-              var message = res.firstName + " " + res.lastName;
-              console.log(message);
-              document.getElementById("header-signup").textContent=message;
-              document.getElementById("header-signup").onclick = function(){
-              window.location.href = "user-account.html"
+
+
+
+document.addEventListener("DOMContentLoaded",
+  function (event) {
+    
+    //When pressing signup button
+    document.getElementById("signupSubmit").addEventListener("click", function () {
+            console.log('signup button pressed');
+            // Call server to get the name
+            var pass = document.getElementById("pass1").value;
+            
+            if (pass == "") {
+              console.log("Empty Password");
+            }
+            else{
+              console.log(pass);
+              document.getElementById("header-signup").innerHTML = pass;
               modal.style.display = "none";
-              };
-              //modal.style.display = "none";
-            });
-      });
+
+            }
+    });
+    
+});
+
+
+// $ajaxUtils
+//           .sendGetRequest("data/name.json", 
+//             function (res) {
+//               console.log('Inside Response');
+//               var message = res.firstName + " " + res.lastName;
+//               console.log(message);
+//               document.getElementById("header-signup").textContent=message;
+//               document.getElementById("header-signup").onclick = function(){
+//               window.location.href = "user-account.html"
+//               modal.style.display = "none";
+//               };
+//               //modal.style.display = "none";
+//             });
 
 
 // //Posting Method 1
