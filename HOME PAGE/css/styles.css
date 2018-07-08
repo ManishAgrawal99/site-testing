@@ -471,6 +471,7 @@ input[type=text]:focus, input[type=password]:focus {
 hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
+    width: 80%;
 }
  
 /* The Close Button (x) */
@@ -520,9 +521,14 @@ hr {
   color: #2AB769;
 }
 
-#testimonial-tiles h5{
+.testimonial-tile h5{
   color: #2AB769;
   margin-top: 20px;
+  margin-left: 10px;
+}
+
+.testimonial-tile h4{
+  margin-left: 10px;
 }
 
 .testimonial-tile{
