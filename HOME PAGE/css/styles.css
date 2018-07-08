@@ -276,12 +276,35 @@ body {
   
 }
 
+.box li{
+  font-size: .85em;
+}
+
 #service-img{
   margin-top: 30px;
   margin-bottom: 20px;
 }
 
 #service-img img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+#about-img{
+  margin-top: 50px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  transition: transform .4s;
+  }
+
+#about-img:hover{
+  box-shadow: 0 1px 5px 1px #000;
+  transform: scale(1.1);
+}
+
+#about-img img{
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -478,4 +501,30 @@ hr {
     .cancelbtn, .signupbtn {
        width: 100%;
     }
+}
+
+/******Testimonials*******/
+
+#testimonials{
+  clear: both;
+  margin-top: 100px;
+  border: 2px dotted #ddd;
+}
+
+#testimonials-header{
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 70px;
+  margin-bottom: 50px;
+  font-size: 1.4em;
+  color: #2AB769;
+}
+
+#testimonial-tiles h5{
+  color: #2AB769;
+  margin-top: 20px;
+}
+
+.testimonial-tile{
+  margin-top: 20px;
 }
