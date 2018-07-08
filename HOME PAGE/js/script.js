@@ -9,20 +9,25 @@ window.onclick = function(event) {
     }
 }
 
-document.getElementById("header-signup").addEventListener("click", function () {
-        
+//When pressing signup button
+document.getElementById("signupSubmit").addEventListener("click", function () {
+        console.log('signup button pressed');
         // Call server to get the name
-        $ajaxUtils
+        var pass = document.getElementById("pass1").value;
+        console.log(pass);
+
+          $ajaxUtils
           .sendGetRequest("data/name.json", 
             function (res) {
-              var message = res.firstName + " " + res.lastName
+              console.log('Inside Response');
+              var message = res.firstName + " " + res.lastName;
               console.log(message);
               document.getElementById("header-signup").textContent=message;
               document.getElementById("header-signup").onclick = function(){
-              window.location.href = "index.html";
-
-
+              window.location.href = "user-account.html"
+              modal.style.display = "none";
               };
+              //modal.style.display = "none";
             });
       });
 
