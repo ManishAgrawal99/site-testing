@@ -534,3 +534,68 @@ hr {
 .testimonial-tile{
   margin-top: 20px;
 }
+
+/************CART**************/
+
+.head-left div{
+  display: inline-block;
+  font-size: 1.1em;
+  margin-bottom: 50px;
+  margin-left: 20px;
+}
+
+#cart-total-price{
+  margin-right: 30px;
+}
+
+#hr-cart{
+  border: 2px solid #ddd;
+  margin-bottom: 20px;
+  width: 95%;
+}
+
+#cart-contents div{
+  border: 1px solid #dedede;
+  padding: 15px;
+}
+
+
+#cart-contents h4{
+  text-align: center;
+}
+
+#cart-contents h5{
+  font-size: 1.2em;
+}
+
+.cart-right{
+  padding-right: 20px;
+}
+
+.cart-right h4{
+  margin-top: 55px;
+}
+
+#place-order-btn{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 50px;
+  text-align: center;
+  padding: 8px 16px;
+  background-color: #000;
+  color: #fff;
+}
+
+#place-order-btn:hover{
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #place-order-btn{
+    width: 80%;
+  }
+}
