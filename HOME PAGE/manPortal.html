@@ -172,28 +172,38 @@
 
   <span id="pending" class="portal-table-headers">Pending Jobs</span>
 
-  <div class="table-wrapper">
-      <table>
-          <tbody>
-              <tr>
-                <td class="portal-fields">Field 1</td>
-                <td class="portal-fields">Field 2</td>
-              </tr>
-              <tr>
-                <td id="">Details</td>
-                <td id="">Morbi faucibus arcu accumsan lorem.</td>
-              </tr>
-              <tr>
-                <td id="">Details</td>
-                <td id="">Vis ac commodo adipiscing arcu aliquet.</td>
-              </tr>
-              <tr>
-                <td id="">Details</td>
-                <td id="">Morbi faucibus arcu accumsan lorem.</td>
-              </tr>
-          </tbody>
-      </table>
-  </div>
+  <form id="assign-job" action="/assign" method="POST">
+    <div class="pendingJobContainer">
+      
+      <div id="pending-job-details">
+        <div class="table-wrapper">
+          <table>
+              <tbody>
+                  <tr>
+                    <td class="portal-fields">Customer Name</td>
+                    <td id=""></td> 
+                  </tr>
+                  <tr>
+                    <td class="portal-fields">Phone Number</td>
+                    <td id=""></td>
+                  </tr>
+                  <tr>
+                    <td class="portal-fields">Address</td>
+                    <td id=""></td>
+                  </tr>
+                  <tr>
+                    <td class="portal-fields">Date & Time</td>
+                    <td id=""></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      </div>
+
+      <label for="assign"><b>Assign</b></label>
+      <input type="checkbox" placeholder="First Name" name="First Name" required>
+    </div>
+  </form>
 
   <span id="completed" class="portal-table-headers">Completed Jobs</span>
 

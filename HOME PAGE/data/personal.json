@@ -2,9 +2,5 @@
   "name": "Manish",
   "supervisor": "Agrawal",
   "phone": 1234567890,
-  "eid": 1,
-  "custName": "Manish",
-  "custPhone": "0987654321",
-  "custAddress": "India",
-  "custDate": "09/07/18"
-}
+  "eid": 1
+  }
