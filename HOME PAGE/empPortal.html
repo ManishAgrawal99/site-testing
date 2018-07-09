@@ -17,12 +17,12 @@
     <nav id="header-nav" class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <a href="index.html" class="pull-left visible-md visible-lg">
+          <a href="#" class="pull-left visible-md visible-lg">
             <div id="logo-img"></div>
           </a>
 
           <div class="navbar-brand">
-            <a href="index.html"><h1>iCLEANERS</h1></a>
+            <a href="#"><h1>iCLEANERS</h1></a>
           </div>
 
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
@@ -57,27 +57,65 @@
   </header>
 
   <!--Signup Modal-->
-  <div id="id01" class="modal">
+    <!--Signup Modal-->
+<div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
-    <div class="signup-container">
-      <h1>Sign Up</h1>
-      <p>Please fill in this form to create an account.</p>
-      <hr>
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" id="pass1" placeholder="Enter Password" name="psw" required>
-
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-      <div class="clearfix">
-        <button type="submit" id="loginSubmit" class="signupbtn">Login</button>
-        <button type="submit" id="signupSubmit" class="signupbtn">Sign Up</button>
-      </div>
+    <div class="tab">
+      <button class="tablinks" onclick="openTabs(event, 'SignupTab')">SignUp</button>
+      <button class="tablinks" onclick="openTabs(event, 'LoginTab')">Login</button>
     </div>
-  </form>
+
+    <div id="SignupTab" class="tabcontent">
+        <form class="modal-content">
+        <div class="signup-container">
+          <h1>Sign Up</h1>
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+
+          <label for="firstName"><b>First Name</b></label>
+          <input type="text" placeholder="First Name" name="First Name" required>
+
+          <label for="lastName"><b>Last Name</b></label>
+          <input type="text" placeholder="Last Name" name="Last Name" required>
+
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+
+          <label for="phoneNumber"><b>Mobile Number</b></label>
+          <input type="tel" placeholder="Mobile Number" name="Mobile Number" required>
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" id="pass1" placeholder="Enter Password" name="psw" required>
+
+          <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+          <div class="clearfix">
+              <button type="submit" id="signupSubmit" class="signupbtn">Sign Up</button>
+          </div>
+        </div>
+      </form>    
+    </div>
+
+    <div id="LoginTab" class="tabcontent">
+      <form class="modal-content">
+        <div class="signup-container">
+          <h1>Login</h1>
+          <p>Please enter the details to sign in</p>
+          <hr>
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" id="pass1" placeholder="Enter Password" name="psw" required>
+
+          <div class="clearfix">
+            <button type="submit" id="loginSubmit" class="signupbtn">Login</button>
+          </div>
+        </div>
+      </form> 
+    </div>
+
 </div>
 
 <div class="container">
@@ -88,20 +126,45 @@
       <table>
           <tbody>
               <tr>
-                <td class="portal-fields">Field 1</td>
-                <td id="">Vis ac commodo adipiscing arcu aliquet.</td>
+                <td class="portal-fields">Name</td>
+                <td id=""></td>
               </tr>
               <tr>
-                <td class="portal-fields">Field 2</td>
-                <td id="">Morbi faucibus arcu accumsan lorem.</td>
+                <td class="portal-fields">Supervisors Name</td>
+                <td id=""></td>
               </tr>
               <tr>
-                <td class="portal-fields">Field 3</td>
-                <td id="">Vis ac commodo adipiscing arcu aliquet.</td>
+                <td class="portal-fields">Phone Number</td>
+                <td id=""></td>
               </tr>
               <tr>
-                <td class="portal-fields">Field 4</td>
-                <td id="">Morbi faucibus arcu accumsan lorem.</td>
+                <td class="portal-fields">Employee ID</td>
+                <td id=""></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+  <span id="current" class="portal-table-headers">Current Job</span>
+
+  <div class="table-wrapper">
+      <table>
+          <tbody>
+              <tr>
+                <td class="portal-fields">Customer Name</td>
+                <td id=""></td>
+              </tr>
+              <tr>
+                <td class="portal-fields">Phone Number</td>
+                <td id=""></td>
+              </tr>
+              <tr>
+                <td class="portal-fields">Address</td>
+                <td id=""></td>
+              </tr>
+              <tr>
+                <td class="portal-fields">Date & Time</td>
+                <td id=""></td>
               </tr>
           </tbody>
       </table>
@@ -183,6 +246,9 @@
   </div>
 
 </div>
+
+
+
 
 
   <!-- jQuery (Bootstrap JS plugins depend on it) -->
