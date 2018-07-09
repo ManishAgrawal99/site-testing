@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded",
 
                     //We retrieve the num attribute from json
                     for (var i = 0; i < cartItems.num ; i++) {
-                    	cartHtmlString = cartHtmlString + "<div><h4 id='cart-service-name'>Deep Cleaning</h4><h5>Our Service Includes</h5><ul><li>Bathroom, Kitchen, Living Room, Dining Room, Bedroom and Balcony Deep Cleaning</li><li>Dry vacuuming of sofa, curtain and carpets</li><li>Cleaning Time: 4 Hours, Cleaning Staff: 3</li></ul></div>";
+                    	cartHtmlString = cartHtmlString + "<div><h4 id='cart-service-name'>Deep Cleaning</h4><h5>Our Service Includes</h5><ul><li>Bathroom, Kitchen, Living Room, Dining Room, Bedroom and Balcony Deep Cleaning</li><li>Dry vacuuming of sofa, curtain and carpets</li><li>Cleaning Time: 4 Hours, Cleaning Staff: 3</li><li>Item Total: Rs 1,000</li></ul></div>";
                     }
                     document.getElementById("cart-contents")
                     .innerHTML = cartHtmlString;

@@ -611,6 +611,10 @@ hr {
   padding-right: 20px;
 }
 
+.cart-right form{
+  margin-top: 40px;
+}
+
 .cart-right h4{
   margin-top: 55px;
 }
