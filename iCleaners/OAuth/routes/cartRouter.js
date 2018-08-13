@@ -7,7 +7,7 @@ const mongoose = require ('mongoose');
 const authenticate = require('../authenticate');
 //authenticate file is imported to make the user access only the specified functionalities
 
-const cors = require('./cors');
+//const cors = require('./cors');
 
 
 //Importing the schema we created in the models folder
@@ -18,11 +18,11 @@ const cartRouter = express.Router();
 cartRouter.use(bodyParser.json());
 
 cartRouter.route('/')
-.options(cors.corsWithOptions, (req, res) =>{
-	res.sendStatus(200);
-})
+// .options((req, res) =>{
+// 	res.sendStatus(200);
+// })
 
-.get(cors.corsWithOptions, authenticate.verifyUser, (req,res,next) =>{
+.get(authenticate.verifyUser, (req,res,next) =>{
     //Here we are expecting to get all the services in the cart for that user
     User.findOne({_id : req.user._id})
     .populate('cart')
@@ -40,17 +40,17 @@ cartRouter.route('/')
 	})
 })
 
-.post(cors.corsWithOptions, authenticate.verifyUser, (req,res,next) =>{
+.post(authenticate.verifyUser, (req,res,next) =>{
 	res.statusCode = 403;
 	res.end('POST operation not supported on /cart/');
 })
 
-.put(cors.corsWithOptions, authenticate.verifyUser, (req,res,next) =>{
+.put(authenticate.verifyUser, (req,res,next) =>{
 	res.statusCode = 403;
 	res.end('PUT operation not supported on /cart/');
 })
 
-.delete(cors.corsWithOptions, authenticate.verifyUser, (req,res,next) =>{
+.delete(authenticate.verifyUser, (req,res,next) =>{
 	res.statusCode = 403;
 	res.end('DELETE operation not supported on /cart/');
 })
@@ -58,16 +58,16 @@ cartRouter.route('/')
 //Now, creating the end points for /users/cart/:serviceId
 
 cartRouter.route('/:serviceId')
-.options(cors.corsWithOptions, (req, res) =>{
+.options((req, res) =>{
 	res.sendStatus(200);
 })
 
-.get(cors.corsWithOptions, authenticate.verifyUser, (req,res,next) =>{
+.get(authenticate.verifyUser, (req,res,next) =>{
 	res.statusCode = 403;
 	res.end('GET operation not supported on /cart/' + req.params.serviceId);
 })
 
-.post(cors.corsWithOptions, authenticate.verifyUser, (req,res,next) =>{
+.post(authenticate.verifyUser, (req,res,next) =>{
 	User.findOne({_id: req.user._id})
 	.then((user)=>{
 			if(user.cart.indexOf(req.params.serviceId) == -1){
@@ -96,12 +96,12 @@ cartRouter.route('/:serviceId')
 	})
 
 
-.put(cors.corsWithOptions, authenticate.verifyUser, (req,res,next) =>{
+.put(authenticate.verifyUser, (req,res,next) =>{
 	res.statusCode = 403;
 	res.end('PUT operation not supported on /cart/' + req.params.serviceId);
 })
 
-.delete(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
+.delete(authenticate.verifyUser, (req, res, next) => {
     User.findOne({_id: req.user._id})
 	.then((user) =>{
 		

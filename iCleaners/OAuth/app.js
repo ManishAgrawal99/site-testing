@@ -16,6 +16,7 @@ var usersRouter = require('./routes/users');
 var serviceRouter = require('./routes/serviceRouter');
 var uploadRouter = require('./routes/uploadRouter');
 var cartRouter = require('./routes/cartRouter');
+var homeRouter = require('./routes/homeRouter');
 
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
@@ -76,6 +77,7 @@ app.use('/users', usersRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));    
 
+app.use('/home',homeRouter)
 app.use('/services', serviceRouter);
 app.use('/cart',cartRouter);
 app.use('/imageUpload', uploadRouter);

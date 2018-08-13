@@ -12,6 +12,14 @@ var User = new Schema({
         type: String,
         default:''
     },
+    email:{
+        type: String,
+        default:''
+    },
+    mobile:{
+        type:String,
+        default:''
+    },
     //The facebookId will store the fb Id of the user that has passed in the access token
     facebookId: String,
     admin: {

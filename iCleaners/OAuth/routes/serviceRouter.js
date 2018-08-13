@@ -1,5 +1,5 @@
 //When we use next(err) in this file, we are making the error to be handled
-// by the error handler in the ap.js
+// by the error handler in the app.js
 
 const express = require ('express');
 const bodyParser = require ('body-parser');
@@ -7,7 +7,7 @@ const mongoose = require ('mongoose');
 const authenticate = require('../authenticate');
 //authenticate file is imported to make the user access only the specified functionalities
 
-const cors = require('./cors');
+//const cors = require('./cors');
 
 
 //Importing the schema we created in the models folder
@@ -18,12 +18,12 @@ const serviceRouter = express.Router();
 serviceRouter.use(bodyParser.json());
 
 serviceRouter.route('/')
-.options(cors.corsWithOptions, (req, res) =>{
-	res.sendStatus(200);
-})
+// .options(cors.corsWithOptions, (req, res) =>{
+// 	res.sendStatus(200);
+// })
 
 //Setting up all the endpoints for the /services
-.get(cors.cors, (req,res,next) =>{
+.get((req,res,next) =>{
 	//Here we are expecting to get all the services, so we need to find all the services in DB
 	Services.find({})
 	.then((services) =>{
@@ -40,7 +40,7 @@ serviceRouter.route('/')
 	})
 })
 
-.post(cors.corsWithOptions, authenticate.verifyUser,authenticate.verifyAdmin , (req,res,next) =>{
+.post(authenticate.verifyUser,authenticate.verifyAdmin , (req,res,next) =>{
 	//It will take the document to be posted from the body of the request
 	Services.create(req.body)
 	.then((service) =>{
@@ -57,12 +57,12 @@ serviceRouter.route('/')
 	})	
 })
 
-.put(cors.corsWithOptions, authenticate.verifyUser,authenticate.verifyAdmin , (req,res,next) =>{
+.put(authenticate.verifyUser,authenticate.verifyAdmin , (req,res,next) =>{
 	res.statusCode = 403;
 	res.end('PUT operation not supported on /services');
 })
 
-.delete(cors.corsWithOptions, authenticate.verifyUser,authenticate.verifyAdmin , (req,res,next) =>{
+.delete(authenticate.verifyUser,authenticate.verifyAdmin , (req,res,next) =>{
 	Services.remove({})
 	.then((resp) =>{
 		res.statusCode = 200;
@@ -82,11 +82,11 @@ serviceRouter.route('/')
 //Setting up all the endpoints for the /services/:serviceId
 
 serviceRouter.route('/:serviceId')
-.options(cors.corsWithOptions, (req, res) =>{
+.options((req, res) =>{
 	res.sendStatus(200);
 })
 
-.get(cors.cors, (req,res,next) =>{
+.get((req,res,next) =>{
 	Services.findById(req.params.serviceId)
 	.then((service) =>{
 		res.statusCode = 200;
@@ -102,12 +102,12 @@ serviceRouter.route('/:serviceId')
 
 })
 
-.post(cors.corsWithOptions, authenticate.verifyUser,authenticate.verifyAdmin , (req,res,next) =>{
+.post(authenticate.verifyUser,authenticate.verifyAdmin , (req,res,next) =>{
 	res.statusCode = 403;
 	res.end('POST operation not supported on /services/'+req.params.serviceId);
 })
 
-.put(cors.corsWithOptions, authenticate.verifyUser,authenticate.verifyAdmin , (req,res,next) =>{
+.put(authenticate.verifyUser,authenticate.verifyAdmin , (req,res,next) =>{
 	Services.findByIdAndUpdate(req.params.serviceId,{
 		$set: req.body
 	}, {new: true})
@@ -125,7 +125,7 @@ serviceRouter.route('/:serviceId')
 
 })
 
-.delete(cors.corsWithOptions, authenticate.verifyUser,authenticate.verifyAdmin , (req, res, next) => {
+.delete(authenticate.verifyUser,authenticate.verifyAdmin , (req, res, next) => {
     Services.findByIdAndRemove(req.params.serviceId)
     .then((resp) => {
         res.statusCode = 200;

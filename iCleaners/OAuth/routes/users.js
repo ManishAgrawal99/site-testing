@@ -4,7 +4,7 @@ var User = require('../models/user');
 var passport = require('passport');
 var authenticate = require('../authenticate');
 
-const cors = require('./cors');
+//const cors = require('./cors');
 
 var router = express.Router();
 router.use(bodyParser.json());
@@ -12,7 +12,7 @@ router.use(bodyParser.json());
 
 
 /* GET users listing. */
-router.get('/', cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, function(req, res, next) {
+router.get('/', authenticate.verifyUser, authenticate.verifyAdmin, function(req, res, next) {
 
   //Here we are expecting to get all the users, so we need to find all the users in DB
 	User.find({})
@@ -29,14 +29,16 @@ router.get('/', cors.corsWithOptions, authenticate.verifyUser, authenticate.veri
 	})
 });
 
-router.post('/signup',cors.corsWithOptions, (req, res, next) =>{
+router.post('/signup',(req, res, next) =>{
   //If the provided username in the body already exists
+  //username will be saved by the email
   User.register(new User({username: req.body.username}),
     req.body.password, (err, user) =>{
     if(err){
       res.statusCode = 500;
       res.setHeader('Content-Type', 'application/json');
-      res.json({err: err});      
+      res.json({err: err});
+      res.redirect("https://localhost:3443");      
     }
     else{
       if(req.body.firstname){
@@ -45,6 +47,13 @@ router.post('/signup',cors.corsWithOptions, (req, res, next) =>{
       if(req.body.lastname){
         user.lastname = req.body.lastname;
       }
+      if(req.body.email){
+        user.email = req.body.email;
+      }
+      if(req.body.mobile){
+        user.mobile = req.body.mobile;
+      }
+
       user.save((err, user) => {
         if(err){
           res.statusCode = 500;
@@ -56,6 +65,7 @@ router.post('/signup',cors.corsWithOptions, (req, res, next) =>{
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
         res.json({success: true, status: 'Registeration Successful'});
+        res.redirect("https://localhost:3443/home");
         });
       });
       
@@ -63,7 +73,7 @@ router.post('/signup',cors.corsWithOptions, (req, res, next) =>{
   });
 });
 
-router.post('/login', cors.corsWithOptions, passport.authenticate('local'), (req, res) => {
+router.post('/login', passport.authenticate('local'), (req, res) => {
   //Creating a token using the authenticate file and sending in the user id from the req header as param
   //The req.user will be already available because the passport.authenticate('local') is successfully
   //done and this loads up the user property on the req message
