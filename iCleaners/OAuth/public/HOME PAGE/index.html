@@ -86,8 +86,9 @@
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 
     <div class="tab">
-      <button class="tablinks" onclick="openTabs(event, 'SignupTab')">SignUp</button>
-      <button class="tablinks" onclick="openTabs(event, 'LoginTab')">Login</button>
+      <button id="signupModalTab" class="tablinks" onclick="openTabs(event, 'SignupTab')">SignUp</button>
+      <button id="loginModalTab" class="tablinks" onclick="openTabs(event, 'LoginTab')">Login</button>
+      <button id="logOutModalTab" class="tablinks">LogOut</button>
     </div>
 
     <div id="SignupTab" class="tabcontent">
@@ -122,22 +123,22 @@
     </div>
 
     <div id="LoginTab" class="tabcontent">
-      <form action="https://localhost:3443/users/login" method="POST" class="modal-content">
+      <div class="modal-content">
         <div class="signup-container">
           <h1>Login</h1>
           <p>Please enter the details to sign in</p>
           <hr>
-          <label for="username"><b>Email</b></label>
-          <input type="text" id="emailField" placeholder="Enter Email" name="username" required>
+          <label><b>Email</b></label>
+          <input type="text" id="emailField" placeholder="Enter Email" required>
 
-          <label for="password"><b>Password</b></label>
-          <input type="password" id="pass1" placeholder="Enter Password" name="password" required>
+          <label><b>Password</b></label>
+          <input type="password" id="pass2" placeholder="Enter Password" required>
 
           <div class="clearfix">
             <button id="loginSubmit" class="signupbtn">Login</button>
           </div>
         </div>
-      </form> 
+      </div> 
     </div>
 
 </div>
@@ -149,6 +150,7 @@
   <!-- jQuery (Bootstrap JS plugins depend on it) -->
   <script src="js/jquery-2.1.4.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/ajax-utils.js"></script>
   <script src="js/script.js"></script>
 </body>

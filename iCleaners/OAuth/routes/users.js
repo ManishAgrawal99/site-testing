@@ -64,7 +64,7 @@ router.post('/signup',(req, res, next) =>{
         passport.authenticate('local')(req,res, () => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
-        res.json({success: true, status: 'Registeration Successful'});
+        //res.json({success: true, status: 'Registeration Successful'});
         res.redirect("https://localhost:3443/home");
         });
       });
@@ -83,7 +83,7 @@ router.post('/login', passport.authenticate('local'), (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   //The token is passed in to the reply message
   //The token can be later extracted in from here
-  res.json({success: true, token: token, status: 'You are successfully logged in!'});
+  res.json({success: true,userFirstName: req.user.firstname, token: token, status: 'You are successfully logged in!'});
 })
 
 router.get('/logout', (req,res) =>{

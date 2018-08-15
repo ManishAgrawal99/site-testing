@@ -1,5 +1,7 @@
 //Signup-Modal
 // Get the modal
+var token;
+var userFirstName;
 var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
@@ -33,6 +35,32 @@ document.getElementById("brand-name").addEventListener("click", loadHome);
 
 function loadHome() {
 
+            document.getElementById("logOutModalTab").style.display = 'none';
+
+
+            if (localStorage.getItem("webToken")) {
+                console.log(localStorage.getItem("webToken"));
+
+                var modalOne = document.getElementById("signupModalTab");
+                var modalTwo = document.getElementById("loginModalTab");
+                var modalThree = document.getElementById("logOutModalTab");
+
+                modalOne.style.display = 'none';
+                modalTwo.style.display = 'none';
+                modalThree.style.display = 'initial';
+
+                if (localStorage.getItem("userFirstName")) {
+                document.getElementById("header-signup").innerHTML=localStorage.getItem("userFirstName");
+                }  
+
+                document.getElementById("logOutModalTab").addEventListener("click", function () {
+                    localStorage.removeItem("userFirstName");
+                    localStorage.removeItem("webToken");
+                    loadHome();
+                    window.location.href = "https://localhost:3443/home/"
+                })
+            }
+            
     //Loading the home tiles dynamically
 
             $.ajaxSetup({
@@ -94,40 +122,38 @@ function loadHome() {
 
     
     //When pressing Login button
-    // document.getElementById("loginSubmit").addEventListener("click", function () {
-    //         console.log('Login button pressed');
-    //         var pass = document.getElementById("pass1").value;
-    //         console.log(pass);
-    //         var usernameField = document.getElementById("emailField").value;
-    //         console.log(usernameField);
+    document.getElementById("loginSubmit").addEventListener("click", function () {
+            console.log('Login button pressed');
+            var pass = document.getElementById("pass2").value;
+            console.log(pass);
+            var usernameField = document.getElementById("emailField").value;
+            console.log(usernameField);
 
-    //         var loginRequest = {
-    //             "username": usernameField,
-    //             "password": pass
-    //         }    
+            var loginRequest = {
+                "username": usernameField,
+                "password": pass
+            }
 
-    //         $.ajax({
-    //               type: "POST",
-    //               beforeSend: function(request) {
-    //                 request.setRequestHeader("Content-Type", "application/json");
-    //               },
-    //               url: "ttps://localhost:3443/users/login",
-    //               data: "json=" + escape(JSON.stringify(loginRequest)),
-    //               processData: false,
-    //               success: function(msg) {
-    //                 if (res.statusCode == 200) {
-    //                     alert("You have successfully logged in");
-    //                     console.log(msg);
-    //                     window.localStorage.setItem(jwtToken, res.body.token);
-    //                     console.log(window.localStorage.getItem(jwtToken));
+            console.log(loginRequest);  
 
-    //                 }
-    //                 else{
-    //                     console.log(error);
-    //                 }
-    //               }
-    //         });
+            $.post("https://localhost:3443/users/login",
+            loginRequest,
+            function(data,status){
+                
+                    console.log("Inside success");
+                    token=data.token;
+                    localStorage.setItem("webToken", token);
+                    console.log(localStorage.getItem("webToken"));
+                    window.location.href = "https://localhost:3443/home/";
+                    userFirstName=data.userFirstName;
+                    localStorage.setItem("userFirstName", userFirstName);
+                    console.log(localStorage.getItem("userFirstName"));
+                    
+                
+            }); 
 
 
-    // });    
+    });    
 };
+
+
