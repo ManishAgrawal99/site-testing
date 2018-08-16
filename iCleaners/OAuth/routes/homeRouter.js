@@ -20,6 +20,17 @@ homeRouter.route('/')
     
 })
 
+
+homeRouter.route('/cart')
+
+.get((req, res, next) =>{
+    //res.sendfile('public\HOME PAGE\index.html');
+    res.sendFile(path.join(__dirname, '../public/HOME PAGE', 'cart.html'));
+    
+})
+
+
+
 homeRouter.route('/:serviceId')
 .get((req, res, next) =>{
     res.sendFile(path.join(__dirname, '../public/HOME PAGE', 'deepClean.html'));

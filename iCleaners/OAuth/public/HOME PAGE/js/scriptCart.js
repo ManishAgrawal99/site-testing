@@ -1,3 +1,5 @@
+var totalPrice = 0;
+
 document.addEventListener("DOMContentLoaded",
   function (event){
   	            $.ajaxSetup({
@@ -6,23 +8,28 @@ document.addEventListener("DOMContentLoaded",
                 }
             });
 			$.ajax({
-                url : "data/name.json",
+                url : "https://localhost:3443/cart",
                 dataType : "json",
+                headers:{
+                    Authorization: 'bearer ' + localStorage.getItem("webToken")
+                },
                 type : "get",
                 success: function( data, textStatus, jQxhr ){
                 	console.log("Inside get success");
+                    console.log(data);
                 	var cartHtmlString = "";
                     var cartItems = data;
-                    console.log(cartItems.num);
+                    console.log(cartItems.cart.length);
 
                     //We retrieve the num attribute from json
-                    for (var i = 0; i < cartItems.num ; i++) {
-                    	cartHtmlString = cartHtmlString + "<div><h4 id='cart-service-name'>Deep Cleaning</h4><h5>Our Service Includes</h5><ul><li>Bathroom, Kitchen, Living Room, Dining Room, Bedroom and Balcony Deep Cleaning</li><li>Dry vacuuming of sofa, curtain and carpets</li><li>Cleaning Time: 4 Hours, Cleaning Staff: 3</li><li>Item Total: Rs 1,000</li></ul></div>";
+                    console.log("Price array "+ cartItems.cart[1].price.length);
+                    for (var i = 0; i < cartItems.cart.length ; i++) {
+                    	cartHtmlString = cartHtmlString + "<div><h4 id='cart-service-name'>"+cartItems.cart[i].name+"</h4><h5>Our Service Includes</h5><ul><li>Bathroom, Kitchen, Living Room, Dining Room, Bedroom and Balcony Deep Cleaning</li><li>Dry vacuuming of sofa, curtain and carpets</li><li>Cleaning Time: 4 Hours, Cleaning Staff: 3</li><li>Item Total: Rs "+cartItems.cart[i].price[localStorage.getItem("houseType")]+"</li></ul></div>";
+                        totalPrice = totalPrice + cartItems.cart[i].price[localStorage.getItem("houseType")];
                     }
                     document.getElementById("cart-contents")
                     .innerHTML = cartHtmlString;
 
-                    var totalPrice = cartItems.num * 1000;
                     var n = totalPrice.toString();
 
                     document.getElementById("cart-total-price")
